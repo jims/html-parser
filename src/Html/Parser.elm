@@ -358,6 +358,10 @@ voidElements =
     , "source"
     , "track"
     , "wbr"
+
+    -- SVG tags
+    , "path"
+    , "rect"
     ]
 
 
