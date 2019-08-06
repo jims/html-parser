@@ -26,7 +26,24 @@ toVirtualDomEach : Node -> Html msg
 toVirtualDomEach node =
     case node of
         Element name attrs children ->
-            Html.node name (List.map toAttribute attrs) (toVirtualDom children)
+            if name == "svg" then
+                svgNode name (List.map toAttribute attrs) (List.map toVirtualSvgDomEach children)
+
+            else
+                Html.node name (List.map toAttribute attrs) (toVirtualDom children)
+
+        Text s ->
+            text s
+
+        Comment _ ->
+            text ""
+
+
+toVirtualSvgDomEach : Node -> Html msg
+toVirtualSvgDomEach node =
+    case node of
+        Element name attrs children ->
+            svgNode name (List.map toAttribute attrs) (List.map toVirtualSvgDomEach children)
 
         Text s ->
             text s
@@ -38,3 +55,8 @@ toVirtualDomEach node =
 toAttribute : ( String, String ) -> Attribute msg
 toAttribute ( name, value ) =
     attribute name value
+
+
+svgNode : String -> List (Attribute msg) -> List (Html msg) -> Html msg
+svgNode =
+    Elm.Kernel.VirtualDom.nodeNS "http://www.w3.org/2000/svg"
