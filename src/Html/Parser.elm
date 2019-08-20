@@ -362,6 +362,7 @@ voidElements =
     -- SVG tags
     , "path"
     , "rect"
+    , "circle"
     ]
 
 
