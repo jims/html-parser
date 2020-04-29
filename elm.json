@@ -3,7 +3,7 @@
     "name": "jims/html-parser",
     "summary": "Parse HTML 5 in Elm",
     "license": "BSD-3-Clause",
-    "version": "1.0.3",
+    "version": "1.0.0",
     "exposed-modules": [
         "Html.Parser",
         "Html.Parser.Util"
