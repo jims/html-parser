@@ -1,6 +1,6 @@
 {
     "type": "package",
-    "name": "abinayasudhir/html-parser",
+    "name": "jims/html-parser",
     "summary": "Parse HTML 5 in Elm",
     "license": "BSD-3-Clause",
     "version": "1.0.3",
@@ -8,7 +8,7 @@
         "Html.Parser",
         "Html.Parser.Util"
     ],
-    "elm-version": "0.19.0 <= v < 0.20.0",
+    "elm-version": "0.19.1 <= v < 0.20.0",
     "dependencies": {
         "elm/core": "1.0.0 <= v < 2.0.0",
         "elm/html": "1.0.0 <= v < 2.0.0",
