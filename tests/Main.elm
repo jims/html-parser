@@ -157,8 +157,7 @@ commentTests =
         , test "basic2" (testParse """<!--<div></div>-->""" (Comment "<div></div>"))
         , test "basic3" (testParse """<div><!--</div>--></div>""" (Element "div" [] [ Comment "</div>" ]))
         , test "basic4" (testParse """<!--<!---->""" (Comment "<!--"))
-        , test "basic5" (testParse """<!--foo\t\u{000D}
-        -->""" (Comment "foo\t\u{000D}\n        "))
+        , test "basic5" (testParse """<!--foo\t\u{000D}\n        -->""" (Comment "foo\t\u{000D}\n        "))
         ]
 
 
